@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# omarchy:summary=Launch the default coding agent in a terminal or GUI
+# omarchy:args=[--inline] [--pick]
+# omarchy:examples=omarchy agent | omarchy agent --inline
+
+inline=false
+pick=false
+prompt=""
+
+args=()
+while (($#)); do
+  case "$1" in
+    --inline)
+      inline=true
+      args+=("$1")
+      shift
+      ;;
+    --pick)
+      pick=true
+      args+=("$1")
+      shift
+      ;;
+    --prompt)
+      prompt=${2:?--prompt needs a value}
+      args+=("$1" "$2")
+      shift 2
+      ;;
+    *)
+      args+=("$1")
+      shift
+      ;;
+  esac
+done
+
+agent=$(omarchy-default-agent)
+
+if [[ -z $agent ]]; then
+  if [[ $pick == "true" ]]; then
+    exec omarchy-menu summon setup.default.agent
+  fi
+  echo "Choose default agent with: omarchy default agent <name>" >&2
+  exit 1
+fi
+
+if [[ "$agent" == "antigravity" ]]; then
+  [[ $PWD == "$HOME" && -d $HOME/Work ]] && cd "$HOME/Work"
+  if command -v omarchy-launch-or-focus &>/dev/null; then
+    exec omarchy-launch-or-focus "antigravity" "uwsm-app -- antigravity"
+  else
+    exec setsid uwsm-app -- antigravity "$@"
+  fi
+fi
+
+exec /usr/bin/omarchy-agent "${args[@]}"

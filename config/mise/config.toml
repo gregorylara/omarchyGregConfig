@@ -1,0 +1,14 @@
+[tools]
+bun = "latest"
+claude = "latest"
+codex = "latest"
+gh = "latest"
+java = "latest"
+node = "26.8.2"
+ollama = "latest"
+opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
+pi = "latest"
+python = "latest"
+
+[settings.upgrade]
+auto_prune = false

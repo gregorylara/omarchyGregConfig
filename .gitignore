@@ -1,0 +1,6 @@
+# Ignorar archivos temporales o de respaldo local
+*.bak
+*.bak.*
+__pycache__/
+*.pyc
+.DS_Store

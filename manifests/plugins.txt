@@ -1,0 +1,1 @@
+oma.razer|https://github.com/gregorylara/omarchyRazerControl.git

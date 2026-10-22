@@ -1,0 +1,2 @@
+# Custom environment for Omarchy session under UWSM
+export PATH="$HOME/.local/bin:$PATH"

@@ -1,0 +1,8 @@
+{
+  "setup.default.agent.antigravity": {
+    "icon": "󰚩",
+    "label": "Google Antigravity",
+    "checked": "[[ \"$(omarchy-default-agent)\" == \"antigravity\" ]]",
+    "action": "omarchy-default-agent antigravity"
+  }
+}

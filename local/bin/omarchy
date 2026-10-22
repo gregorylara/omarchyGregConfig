@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Wrapper around /usr/bin/omarchy to intercept agent commands for Antigravity integration
+case "$1" in
+  default)
+    if [[ "$2" == "agent" ]]; then
+      shift 2
+      exec omarchy-default-agent "$@"
+    fi
+    ;;
+  agent)
+    shift 1
+    exec omarchy-agent "$@"
+    ;;
+esac
+
+exec /usr/bin/omarchy "$@"

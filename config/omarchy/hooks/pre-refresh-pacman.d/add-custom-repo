@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Keeps CachyOS repositories active at the end of /etc/pacman.conf across `omarchy refresh pacman` updates.
+CONF=/etc/pacman.conf
+SNIPPET=/etc/pacman.d/custom-repos.conf
+MARKER="Include = $SNIPPET"
+
+[[ -r $SNIPPET ]] || exit 0
+grep -qxF "$MARKER" "$CONF" && exit 0
+
+printf '\n# Custom repositories (CachyOS)\n%s\n' "$MARKER" | sudo tee -a "$CONF" >/dev/null

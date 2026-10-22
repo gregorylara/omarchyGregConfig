@@ -1,0 +1,2 @@
+#!/bin/bash
+exec systemd-run --user --scope --slice=app-graphical.slice /usr/bin/easyeffects "$@"

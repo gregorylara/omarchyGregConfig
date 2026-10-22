@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# omarchy:summary=Set and launch the default coding agent
+# omarchy:args=[antigravity|pi|omp|opencode|claude|codex|grok|gemini|openclaw|hermes|copilot|crush|cursor-agent|muse]
+# omarchy:examples=omarchy default agent | omarchy default agent antigravity | omarchy default agent claude
+
+agent_file="$HOME/.config/omarchy/defaults/agent"
+
+installing=false
+if [[ ${1:-} == "--install" ]]; then
+  installing=true
+  shift
+fi
+
+if (($# == 0)); then
+  if [[ -f $agent_file ]]; then
+    read -r agent <"$agent_file"
+  fi
+  [[ -n ${agent:-} ]] && echo "$agent"
+  exit 0
+fi
+
+case "$1" in
+  antigravity)
+    mkdir -p "$(dirname "$agent_file")"
+    printf '%s\n' "antigravity" >"$agent_file"
+    if [[ $installing == "true" ]]; then
+      exec omarchy-agent --inline
+    else
+      exec omarchy-agent
+    fi
+    ;;
+  -h|--help)
+    echo "Usage: omarchy-default-agent <antigravity|pi|omp|opencode|claude|codex|grok|gemini|openclaw|hermes|copilot|crush|cursor-agent|muse>"
+    exit 0
+    ;;
+  *)
+    if [[ $installing == "true" ]]; then
+      exec /usr/bin/omarchy-default-agent --install "$1"
+    else
+      exec /usr/bin/omarchy-default-agent "$1"
+    fi
+    ;;
+esac

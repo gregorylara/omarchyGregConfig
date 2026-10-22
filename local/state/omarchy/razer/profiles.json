@@ -1,0 +1,105 @@
+{
+  "activeProfile": "onboard-2",
+  "profiles": [
+    {
+      "id": "onboard-1",
+      "name": "Profile 1 (Default / Yellow)",
+      "isOnboard": true,
+      "onboardSlot": 1,
+      "badgeColor": "#FFFF00",
+      "dpi": 2400,
+      "dpi_stages": [
+        2400,
+        3400,
+        4800,
+        5000,
+        5200
+      ],
+      "active_stage": 1,
+      "poll_rate": 8000,
+      "brightness": 100,
+      "effect": "static",
+      "effect_color": "#FFFF00"
+    },
+    {
+      "id": "onboard-2",
+      "name": "Profile 2 (FPS Ultra / Red)",
+      "isOnboard": true,
+      "onboardSlot": 2,
+      "badgeColor": "#FF0000",
+      "dpi": 3400,
+      "dpi_stages": [
+        2400,
+        3400,
+        4800,
+        5000,
+        5200
+      ],
+      "active_stage": 2,
+      "poll_rate": 8000,
+      "brightness": 100,
+      "effect": "static",
+      "effect_color": "#FF0000"
+    },
+    {
+      "id": "onboard-3",
+      "name": "Profile 3 (MOBA / Green)",
+      "isOnboard": true,
+      "onboardSlot": 3,
+      "badgeColor": "#00FF00",
+      "dpi": 4800,
+      "dpi_stages": [
+        2400,
+        3400,
+        4800,
+        5000,
+        5200
+      ],
+      "active_stage": 3,
+      "poll_rate": 8000,
+      "brightness": 100,
+      "effect": "static",
+      "effect_color": "#00FF00"
+    },
+    {
+      "id": "onboard-4",
+      "name": "Profile 4 (Productivity / Blue)",
+      "isOnboard": true,
+      "onboardSlot": 4,
+      "badgeColor": "#0066FF",
+      "dpi": 5000,
+      "dpi_stages": [
+        2400,
+        3400,
+        4800,
+        5000,
+        5200
+      ],
+      "active_stage": 4,
+      "poll_rate": 8000,
+      "brightness": 100,
+      "effect": "static",
+      "effect_color": "#0066FF"
+    },
+    {
+      "id": "onboard-5",
+      "name": "Profile 5 (Stealth / Cyan)",
+      "isOnboard": true,
+      "onboardSlot": 5,
+      "badgeColor": "#00FFFF",
+      "dpi": 5200,
+      "dpi_stages": [
+        2400,
+        3400,
+        4800,
+        5000,
+        5200
+      ],
+      "active_stage": 5,
+      "poll_rate": 8000,
+      "brightness": 100,
+      "effect": "static",
+      "effect_color": "#00FFFF"
+    }
+  ]
+}

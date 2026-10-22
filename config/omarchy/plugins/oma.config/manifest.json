@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "oma.config",
+  "name": "Omarchy Config Backup",
+  "version": "1.0.0",
+  "author": "Gregory Lara",
+  "license": "MIT",
+  "description": "Guarda tu configuración actual de Omarchy en GitHub con un clic y restaura cualquier versión anterior desde la barra superior.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Config Backup",
+    "description": "Guardar y restaurar versiones de configuración de Omarchy en GitHub",
+    "category": "System",
+    "aliases": [
+      "config",
+      "backup",
+      "restore",
+      "github",
+      "dotfiles",
+      "oma.config"
+    ],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "repoPath": "/home/greg/Projects/omarchyGregConfig"
+    },
+    "schema": [
+      {
+        "key": "repoPath",
+        "type": "string",
+        "label": "Ruta del repositorio local",
+        "description": "Carpeta donde están backup.sh y restore.sh",
+        "defaultValue": "/home/greg/Projects/omarchyGregConfig"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+#!/bin/bash
+# Revert PipeWire audio configuration to stock Omarchy defaults
+set -e
+echo "Restaurando configuración de audio por defecto de Omarchy / PipeWire..."
+
+if [[ -d "$HOME/.config/pipewire" ]]; then
+    BACKUP_DIR="$HOME/.config/pipewire.bak.$(date +%Y%m%d_%H%M%S)"
+    mv "$HOME/.config/pipewire" "$BACKUP_DIR"
+    echo "Copia de respaldo guardada en: $BACKUP_DIR"
+fi
+
+if command -v omarchy &>/dev/null; then
+    omarchy restart audio
+else
+    systemctl --user restart pipewire pipewire-pulse wireplumber
+fi
+
+echo "¡Listo! La configuración de audio ha sido restaurada a los valores por defecto de fábrica."
