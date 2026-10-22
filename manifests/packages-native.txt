@@ -167,6 +167,7 @@ ufw
 ufw-docker
 usage
 uwsm
+vlc
 voxtype-bin
 vulkan-radeon
 whois

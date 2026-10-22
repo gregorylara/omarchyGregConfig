@@ -35,3 +35,6 @@ o.bind("SUPER + SHIFT + A", "Antigravity", { launch = "antigravity", focus = "an
 -- Oma Razer: cycle on-board profiles (P1 -> P5 -> P1)
 o.bind("SUPER + CTRL + M", "Razer: Next profile", "omarchy-shell oma.razer nextProfile")
 
+-- Steam
+o.bind("SUPER + SHIFT + ALT + S", "Steam", { launch = "steam", focus = "^steam$" })
+

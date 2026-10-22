@@ -217,10 +217,16 @@ Panel {
     contentWidth: panel.fittedContentWidth(Style.space(410))
     contentHeight: panel.fittedContentHeight(panelColumn.implicitHeight, Style.space(580))
 
-    onOpenChanged: if (open) {
-      root.confirmHash = ""
-      root.refresh()
-      Qt.callLater(function() { keyCatcher.forceActiveFocus() })
+    property bool mouseEntered: false
+
+    onOpenChanged: {
+      hoverCloseTimer.stop()
+      mouseEntered = panelHover.hovered
+      if (open) {
+        root.confirmHash = ""
+        root.refresh()
+        Qt.callLater(function() { keyCatcher.forceActiveFocus() })
+      }
     }
 
     PanelKeyCatcher {
@@ -228,6 +234,30 @@ Panel {
       anchors.fill: parent
       onCloseRequested: root.close()
       onTabRequested: function(direction) { root.switchPanel(direction) }
+
+      Timer {
+        id: hoverCloseTimer
+        interval: 150
+        repeat: false
+        onTriggered: {
+          if (root.opened && !panelHover.hovered) {
+            root.close()
+          }
+        }
+      }
+
+      HoverHandler {
+        id: panelHover
+        margin: panel.padding
+        onHoveredChanged: {
+          if (hovered) {
+            panel.mouseEntered = true
+            hoverCloseTimer.stop()
+          } else if (panel.mouseEntered && root.opened) {
+            hoverCloseTimer.restart()
+          }
+        }
+      }
 
       Flickable {
         id: panelFlick
