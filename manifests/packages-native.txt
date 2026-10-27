@@ -101,6 +101,7 @@ luarocks
 man-db
 mangohud
 mariadb-libs
+minecraft-launcher
 mise-bin
 mkinitcpio
 moonlight-qt
