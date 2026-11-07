@@ -169,6 +169,7 @@ ufw
 ufw-docker
 usage
 uwsm
+visual-studio-code-bin
 vlc
 voxtype-bin
 vulkan-radeon
