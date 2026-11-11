@@ -28,6 +28,6 @@ require("default.hypr.toggles")
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
 
--- Steam y lista de amigos en modo tiled en el espacio de trabajo 1
-o.window({ class = "^steam$", title = "^Steam$" }, { tile = true, workspace = "1" })
-o.window({ class = "^steam$", title = "^(Friends List|Lista de amigos)$" }, { tile = true, workspace = "1" })
+-- Steam y lista de amigos en modo tiled
+o.window({ class = "^steam$", title = "^Steam$" }, { tile = true })
+o.window({ class = "^steam$", title = "^(Friends List|Lista de amigos)$" }, { tile = true })

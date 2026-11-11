@@ -29,12 +29,12 @@ cups
 cups-filters
 cups-pk-helper
 ddcutil
+disktree-bin
 docker
 docker-buildx
 docker-compose
 dosfstools
 dotnet-runtime
-dua-cli
 easyeffects
 efibootmgr
 evince
@@ -43,7 +43,11 @@ expac
 eza
 fastfetch
 fcitx5
+fcitx5-chewing
+fcitx5-chinese-addons
 fcitx5-gtk
+fcitx5-hangul
+fcitx5-mozc
 fcitx5-qt
 fd
 ffmpegthumbnailer
@@ -53,6 +57,7 @@ fzf
 gamemode
 gamescope
 git
+gliff
 gnome-disk-utility
 gnome-keyring
 gnome-themes-extra
@@ -65,6 +70,7 @@ gvfs-mtp
 gvfs-nfs
 gvfs-smb
 herdr
+hype
 hyprland
 hyprland-guiutils
 hyprland-preview-share-picker
@@ -105,6 +111,7 @@ mariadb-libs
 minecraft-launcher
 mise-bin
 mkinitcpio
+monologue
 moonlight-qt
 mpv
 mpv-mpris
@@ -120,10 +127,15 @@ obsidian
 omacalc
 omacut
 omarchy
+omarchy-hyprland-titlebars
 omarchy-keyring
 omarchy-nvim
+omarchy-power-profiles-daemon
 omarchy-settings
+omasnap
 omawrite
+owe
+owe-lockfeed
 pacman-contrib
 pamixer
 pinta
@@ -133,7 +145,6 @@ pipewire-jack
 pipewire-pulse
 plocate
 postgresql-libs
-power-profiles-daemon
 python-gobject
 python-poetry-core
 qemu-user-static-binfmt
@@ -145,6 +156,7 @@ rtkit
 ruby
 sddm
 signal-desktop
+signed
 slurp
 socat
 spotify
@@ -153,7 +165,6 @@ steam
 sudo
 sushi
 system-config-printer
-tensaku
 tesseract
 tesseract-data-eng
 tldr
@@ -169,6 +180,7 @@ ufw
 ufw-docker
 usage
 uwsm
+vi
 visual-studio-code-bin
 vlc
 voxtype-bin
@@ -182,6 +194,7 @@ wtype
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-terminal-exec
+xorg-xsetroot
 xournalpp
 xpadneo-dkms
 yaru-icon-theme
