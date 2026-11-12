@@ -43,7 +43,7 @@ if [[ -z $agent ]]; then
   exit 1
 fi
 
-if [[ "$agent" == "antigravity" ]]; then
+if [[ "$agent" == "antigravity" || "$agent" == "agy" ]]; then
   [[ $PWD == "$HOME" && -d $HOME/Work ]] && cd "$HOME/Work"
   if command -v omarchy-launch-or-focus &>/dev/null; then
     exec omarchy-launch-or-focus "antigravity" "uwsm-app -- antigravity"

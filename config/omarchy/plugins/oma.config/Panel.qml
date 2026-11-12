@@ -191,12 +191,14 @@ Panel {
     id: button
     anchors.fill: parent
     bar: root.bar
-    text: root.hasChanges && !vertical ? "󰅠 •" : "󰅠"
+    text: "󰅠"
+    labelText: root.hasChanges && !vertical ? "•" : ""
     slotSize: Style.bar.iconSlot * (root.hasChanges && !vertical ? 1.45 : 1.0)
     tooltipText: root.hasChanges
       ? ("Omarchy Config: " + root.changedCount + " cambio(s) sin guardar (clic para guardar o restaurar)")
       : ("Omarchy Config: Sincronizado en GitHub (#" + (root.headHash || "main") + ")")
     active: root.opened || root.hasChanges
+    activeColor: Color.accent
     onPressed: function(b) {
       if (b === Qt.RightButton) {
         root.triggerBackup()
